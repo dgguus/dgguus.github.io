@@ -7,16 +7,14 @@ header{
     color: #009900;
     text-align: center;
 }
+body{
+    text-decoration: none;
+}
 #bash{
     color: white;
     text-align: center;
 }
 #things{
-    color: white;
-    text-align: left;
-}
-#social{
-    text-decoration: none;
     color: white;
     text-align: left;
 }
