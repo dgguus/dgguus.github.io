@@ -1,11 +1,26 @@
 html{
+    text-decoration: none;
     font-family: monospace;
     background-color: #14141f; 
 }
 header{
-    color: #003300;
+    color: #009900;
+    text-align: center;
 }
-.bash{
+#bash{
+    color: white;
+    text-align: center;
+}
+#things{
+    color: white;
+    text-align: left;
+}
+#social{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+}
+#date{
+    text-align: center;
     color: white;
 }
-
