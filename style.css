@@ -1,4 +1,5 @@
 html{
+    color: white;
     text-decoration: none;
     font-family: monospace;
     background-color: #14141f; 
@@ -40,6 +41,18 @@ body{
     opacity: 0;
   }
 }
+#blink2{font-size: 12px;
+    text-align: center;
+    color: #009900;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 #terminal{
     text-align: center;
     color: #009900;
@@ -49,4 +62,11 @@ body{
     color: white;
     text-align: center;
     font-family: monospace;
+}
+#links a{
+    text-decoration: none;
+    color: white;
+}
+#animegirl{
+    text-align: center;
 }
