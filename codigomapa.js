@@ -1,3 +1,4 @@
+/* Código para funcionámento do menu de navegação, e menu hamburguer */
 const dropdownBtn = document.querySelectorAll(".dropdown-btn");
 const dropdown = document.querySelectorAll(".dropdown");
 const hamburgerBtn = document.getElementById("hamburger");
@@ -20,13 +21,6 @@ function toggleHamburger() {
   navMenu.classList.toggle("show");
 }
 
-// função para abrir página de registro do site
-function NovaAba(){
-  window.open(
-  "registro.html", "_self");
-}
-
-
 dropdownBtn.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     const dropdownIndex = e.currentTarget.dataset.dropdown;
@@ -46,7 +40,7 @@ dropdownBtn.forEach((btn) => {
   });
 });
 
-// close dropdown menu when the dropdown links are clicked
+// fecha o menu expandido quando algum link é clicado
 links.forEach((link) =>
   link.addEventListener("click", () => {
     closeDropdownMenu();
@@ -55,13 +49,13 @@ links.forEach((link) =>
   })
 );
 
-// close dropdown menu when you click on the document body
+// fecha o menu expandido quando o corpo do documento é clicado
 document.documentElement.addEventListener("click", () => {
   closeDropdownMenu();
   setAriaExpandedFalse();
 });
 
-// close dropdown when the escape key is pressed
+// fecha o menu expandido quando o ESC é pressionado
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeDropdownMenu();
@@ -69,34 +63,54 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// toggle hamburger menu
+// ativa menu hamburguer
 hamburgerBtn.addEventListener("click", toggleHamburger);
 
-const nome = document.getElementById('nome')
-const senha = document.getElementById('senha')
-const form = document.getElementById('form')
-const erroElemento = document.getElementById('erro')
+document.getElementById('contatoForm').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-form.addEventListener('submit', (e) => {
-  let messages = []
-  if (nome.value === '' || nome.value == null) {
-    messages.push('Name is required')
+  let nome = document.getElementById('nome').value.trim();
+  let email = document.getElementById('email').value.trim();
+  let mensagem = document.getElementById('mensagem').value.trim();
+
+  let erroNome = document.getElementById('erroNome');
+  let erroEmail = document.getElementById('erroEmail');
+  let erroMensagem = document.getElementById('erroMensagem');
+
+  let valido = true;
+
+  // limpa erros anteriores
+  erroNome.textContent = '';
+  erroEmail.textContent = '';
+  erroMensagem.textContent = '';
+
+  // validação do nome
+  if (nome === '') {
+    erroNome.textContent = 'Por favor, preencha o nome.';
+    valido = false;
   }
 
-  if (senha.value.length <= 6) {
-    messages.push('Senha deve ter mais que 6 caracteres')
+  // validação do email
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email === '') {
+    erroEmail.textContent = 'Por favor, preencha o email.';
+    valido = false;
+  } else if (!regexEmail.test(email)) {
+    erroEmail.textContent = 'Email inválido.';
+    valido = false;
   }
 
-  if (senha.value.length >= 20) {
-    messages.push('Senha deve ter menos de 20 caracteres')
+  // validação da mensagem
+  if (mensagem === '') {
+    erroMensagem.textContent = 'Por favor, escreva uma mensagem.';
+    valido = false;
   }
 
-  if (senha.value === 'senha') {
-    messages.push('Sua senha nao pode ser "senha."')
+  // se tudo estiver ok
+  if (valido) {
+    alert('Formulário enviado com sucesso!');
+    this.reset();
   }
+});
 
-  if (messages.length > 0) {
-    e.preventDefault()
-    erroElemento.innerText = messages.join(', ')
-  }
-})
+
