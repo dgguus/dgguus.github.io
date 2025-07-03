@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Flores</title>
+    <meta name="description" content="Enciclopédia de Orquideas">
+    <title>Orquídeas</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--Para usar alguns ícones comuns-->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/dgguus/dgguus.github.io/refs/heads/main/iconesite.svg">
     <link rel="stylesheet" href="estilo.css">
@@ -74,8 +75,6 @@
             <input type="search" name="search" placeholder="Pesquisar" />
             <i class="bx bx-search" aria-hidden="true"></i>
             </form>
-            <!--Fácil de explicar-->
-            <button onclick="NovaAba()">
             <a href="">
             <img src="https://raw.githubusercontent.com/dgguus/dgguus.github.io/refs/heads/main/iconeusuario.svg" width="30" height="30" alt="user image" />
             </a>
@@ -90,8 +89,9 @@
     </div>
     </header>
 
-    <div class="mainbox">
-        <div class="textbox">
+    <div class="mainbox"><!--Container que servirá para estruturar e dividir o espaço entre as outras divs container "textbox" e "flowerbox"-->
+        <div class="textbox"><!--div para estruturar o texto sobre as flores-->
+            <!--Como dito no arquivo Word, apenas essa página de flores será comentada, para evitar repetição, todas usam o mesmo container-->
             <article>
                 <h2>Orquídea</h2>
                 <p>Orquídeas são todas as plantas que compõem a família Orchidaceae, pertencente à ordem Asparagales, uma das maiores famílias de plantas existentes. Apresentam muitíssimas e variadas formas, cores e tamanhos e existem em todos os continentes, exceto na Antártida, predominando nas áreas tropicais. Não são plantas parasitas, nutrindo-se apenas de material em decomposição que cai das árvores e acumula-se ao emaranhar-se em suas raízes. Elas encontram muitas formas de reprodução: na natureza, principalmente pela dispersão das sementes, mas em cultivo pela divisão de touceiras, semeadura in-vitro ou meristemagem.<br><br>
@@ -111,10 +111,10 @@
             
                 <h3>Cultivo</h3>
                 <p>Como são tantas espécies diferentes de ambientes diferentes, é impossível apresentar os cuidados básicos de cultivo para todas elas. Assim, o primeiro passo para cultivar uma orquídea com sucesso é a identificação correta da espécie. Consultar orquidófilos mais experientes pode ser útil caso surja uma planta desconhecida que se queira cultivar. Desta forma pode-se decidir com precisão a iluminação, o regime de regas, o substrato, e outros fatores necessários para o êxito no cultivo.</p>
-                <small>Ler mais: <a href="https://pt.wikipedia.org/wiki/Orqu%C3%ADdea">https://pt.wikipedia.org/wiki/Orqu%C3%ADdea</a></small>
+                <small>Ler mais: <a href="https://pt.wikipedia.org/wiki/Orqu%C3%ADdea">https://pt.wikipedia.org/wiki/Orqu%C3%ADdea</a></small><!--Link para a fonte das informações, o que é importante para credibilidade.-->
             </article>
         </div>
-        <div class="flowerbox">
+        <div class="flowerbox"><!--div para estruturar e estilizar a imagem das flores que ocupará o espaço restante do container mainbox-->
             <img class="flor" src="orquidea.jpg " alt="Orquídea Phalaenopsis">
             Orquídea Phalaenopsis<br>
             <small>Foto por <strong>Jolo Diaz</strong></small>
